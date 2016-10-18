@@ -1,6 +1,16 @@
 import random
-with open("stopwords.txt") as myfile:
-	list = myfile.split()
+stopwordsfile = open("stopwords.txt", "r")
+stopwords = stopwordsfile.read().split('\n')
+word = raw_input()
+if word.lower() in stopwords:
+	
+#for eachWord in stopwords:
+	#print(eachWord)
+	
+#for line in stopwords.readlines():
+#	line = line.strip()
+#	print(line)
+#	list = line.split(",")
 hello = ["Hi there","Welcome","Hey","Hello there","Hello"]
 print(random.choice(hello))
 response = raw_input()
@@ -19,7 +29,7 @@ print("Do you want to hear a joke?")
 joke = raw_input()
 if joke in ["Yes","yes","Sure","sure","Of course","of course","yeah","Yeah"]:
 	print("How many programmers does it take to change a light bulb? \nNone. It's a hardware problem.")
-elif joke in ["No","no","Not really","not really","Nope","nope"]
+#elif joke in ["No","no","Not really","not really","Nope","nope"]
 
 
 
