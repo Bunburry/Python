@@ -1,35 +1,40 @@
 import random
 stopwordsfile = open("stopwords.txt", "r")
 stopwords = stopwordsfile.read().split('\n')
-word = raw_input()
-if word.lower() in stopwords:
-	
 #for eachWord in stopwords:
 	#print(eachWord)
 	
-#for line in stopwords.readlines():
-#	line = line.strip()
-#	print(line)
-#	list = line.split(",")
-hello = ["Hi there","Welcome","Hey","Hello there","Hello"]
+hello = ["Hi there","Hola","Hey","Hello there","Hello"]
 print(random.choice(hello))
 response = raw_input()
-greeting = ["How are you doing?","How is life?","What's going on?","How's your day going?"]
+greeting = ["How are you doing?","How is life?","How are you?","How's your day going?"]
 name = raw_input("What is your name? ")
-print("Nice to meet you " + name + "\n" + random.choice(greeting))
-#print("Hello " + response + "\nHow are you feeling today?")
+newname = name.split()
+for elem in newname:
+	if elem in stopwords:
+		pass
+	else:
+		print ("Nice to meet you " + elem + "\n" + random.choice(greeting))
+
 
 answer = raw_input()
-if answer in ["good","Good","Great","great","not bad","Not bad","very well","Very well"]:
-	print("I'm pleased to hear that!")
-elif answer in ["bad","Bad","not well","Not well"]:
-	print("Hang in there, " + name + ". Things will work out.")
+answer2 = answer.split()
+for i in answer2:
+	if answer2 not in stopwords or answer2 in ["good","great","not bad","very well"]:
+		print("I'm pleased to hear that!")
+	elif answer2 in ["bad","not well"]:
+		print("Hang in there, " + elem + ". Things will work out.")
+#if answer.lower() in ["good","great","not bad","very well"]:
+#	print("I'm pleased to hear that!")
+#elif answer.lower() in ["bad","not well"]:
+#	print("Hang in there, " + elem + ". Things will work out.")
 	
 print("Do you want to hear a joke?")
 joke = raw_input()
-if joke in ["Yes","yes","Sure","sure","Of course","of course","yeah","Yeah"]:
+if joke.lower() in ["yes","sure","of course","yeah"]:
 	print("How many programmers does it take to change a light bulb? \nNone. It's a hardware problem.")
-#elif joke in ["No","no","Not really","not really","Nope","nope"]
+elif joke.lower() in ["no","not really","nope"]:
+	print("Why so serious?")
 
 
 
