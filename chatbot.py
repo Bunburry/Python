@@ -53,6 +53,9 @@ while True:
 			print ("*laughs in robot*")
 		elif "nice" in phrase and "you" in phrase:
 			print ("The pleasure is mine")
+		elif "bye" in phrase:
+			goodbye = ["Adios","See you soon","Goodbye","Hasta la vista"]
+			print (random.choice(goodbye))
 		elif "dunno" in phrase or "ok" in phrase:
 			print ("k k k")
 		else:
