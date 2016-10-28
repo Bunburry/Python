@@ -17,7 +17,6 @@ for i in numbers:
 	if (i >= 40 and i <= 50):
 		list.append(int(i))
 		x = len(list)
-		print x
 		y = 0
 		counter = 0
 		while(y < x):
