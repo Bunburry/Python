@@ -1,5 +1,6 @@
 import random
 import urllib2, urllib
+import re
 
 
 stopwordsfile = open("stopwords.txt", "r")
@@ -34,20 +35,7 @@ for i in answer2:
 			print("How many programmers does it take to change a light bulb? \nNone. It's a hardware problem.")
 		elif joke.lower() in ["no","not really","nope"]:
 			print("Why so serious?")
-
-while True:
-	phrase = raw_input()
 	
-	phrase = urllib.quote(phrase)
-	blah = urllib2.urlopen("http://en.wikipedia.org/wiki/" + "".join(phrase))
-	html = blah.read()
-	start = html.find("<p>")
-	end = html.find("</p>")
-	for j in phrase:
-		if j in stopwords:
-			pass
-		else:
-			print("Are you talking about " + html[start:end])
 
 while True:
 	phrase = raw_input()

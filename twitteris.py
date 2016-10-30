@@ -18,9 +18,9 @@ cursor = console.cursor()
 cursor.execute("SELECT * FROM urls")
 rows = cursor.fetchall()
 for row in rows: 
-    urls = row[2]
-new = urls.split('\n')
-print new[-1]
+    urls = row[2] #patalpina i masyva
+new = urls.split('\n') #perskaito kiekviena eilute
+print new[-1] #paima paskutini
 
 message = ["I like ","I mostly view ","Today I read "]
 response = api.PostUpdate(random.choice(message) + new[-1])
